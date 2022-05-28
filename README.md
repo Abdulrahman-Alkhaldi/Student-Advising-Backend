@@ -1,5 +1,4 @@
 # instructions on how to run the server
-## create superuser
 * open terminal
 * type cd .\backend\ 
 * type pip install -r requirements.txt    
@@ -9,9 +8,8 @@
 * click on the link that will show in the terminal like this (http://127.0.0.1:8000/ )
 * type /admin after the link (http://127.0.0.1:8000/admin/)
 
-#
 
-## how to make migrations
+# How to make migrations
 
 After changing anything in the code you should make migrations,
 the server must not be running when you make migrations.
