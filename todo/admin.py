@@ -3,7 +3,7 @@ from django.contrib import admin
 from . import models 
 
 class Apointment(admin.ModelAdmin):
-    list_display = ('idd','date', 'time','location','reason','comment')
+    list_display = ('idd','date', 'time','location','reason','comment','studentID')
 
 class Student(admin.ModelAdmin):
     list_display = ('idds', 'name','student_id','year','email','phonenumber')

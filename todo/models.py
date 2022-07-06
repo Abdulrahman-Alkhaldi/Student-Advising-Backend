@@ -21,17 +21,6 @@ class Advisor(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-class Apointment(models.Model):
-    idd = models.ForeignKey(Advisor,on_delete=models.CASCADE)
-    date = models.DateField(max_length=120)
-    time = models.TimeField(blank=False)
-    location = models.CharField(max_length=300)
-    reason = models.CharField(max_length=120)
-    comment = models.CharField(max_length=120, blank=True)
-    def __str__(self):
-        return f"{self.time} {self.date} {self.idd}"
-    pass
-
 class Semester(models.Model):
     term = models.CharField(max_length=120)
     year = models.IntegerField(('year'), choices=YEAR_CHOICES, default=datetime.datetime.now().year)
@@ -50,6 +39,18 @@ class Student(models.Model):
     idds = models.ForeignKey(Curriculum,on_delete=models.PROTECT,blank=False,null=True)
     def __str__(self):
         return f"{self.name} {self.student_id}"
+
+class Apointment(models.Model):
+    idd = models.ForeignKey(Advisor,on_delete=models.CASCADE)
+    date = models.DateField(max_length=120)
+    time = models.TimeField(blank=False)
+    location = models.CharField(max_length=300)
+    reason = models.CharField(max_length=120)
+    comment = models.CharField(max_length=120, blank=True)
+    studentID = models.ForeignKey(Student,on_delete=models.CASCADE,blank=False,null=True)
+    def __str__(self):
+        return f"{self.time} {self.date} {self.idd}"
+    pass
 
 class Courses(models.Model):
     idds = models.ManyToManyField(Curriculum, blank=True)

@@ -9,15 +9,15 @@ class CurriculumSerializer(serializers.ModelSerializer):
         model = Curriculum
         fields = ('idd', 'year')
 
-class ApointmentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Apointment
-        fields = ('idd','date', 'time','location','reason','comment')
-
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = ('idds','name','student_id','year', 'email','phonenumber')
+
+class ApointmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Apointment
+        fields = ('idd','date', 'time','location','reason','comment','studentID')
 
 class AdvisorSerializer(serializers.ModelSerializer):
     class Meta:
