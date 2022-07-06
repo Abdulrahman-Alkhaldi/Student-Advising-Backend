@@ -24,7 +24,7 @@ class Advisor(models.Model):
 class Apointment(models.Model):
     idd = models.ForeignKey(Advisor,on_delete=models.CASCADE)
     date = models.DateField(max_length=120)
-    time = models.TimeField(blank=True)
+    time = models.TimeField(blank=False)
     location = models.CharField(max_length=300)
     reason = models.CharField(max_length=120)
     comment = models.CharField(max_length=120, blank=True)
@@ -45,9 +45,9 @@ class Student(models.Model):
     name = models.CharField(max_length=120)
     student_id = models.IntegerField(blank=False,null=True)
     year = models.IntegerField(('year'), choices=YEAR_CHOICES, default=1)
-    email = models.EmailField(blank=True,null= True)
+    email = models.EmailField(blank=False,null= True)
     phonenumber = models.IntegerField(blank=False)
-    idds = models.ForeignKey(Curriculum,on_delete=models.PROTECT,blank=True,null=True)
+    idds = models.ForeignKey(Curriculum,on_delete=models.PROTECT,blank=False,null=True)
     def __str__(self):
         return f"{self.name} {self.student_id}"
 
@@ -63,8 +63,8 @@ class Courses(models.Model):
         return f"{self.number} {self.name}"
 
 class Registration(models.Model):
-    student = models.ForeignKey(Student,on_delete=models.PROTECT,blank=True,null=True)
-    course = models.ForeignKey(Courses,on_delete=models.PROTECT,blank=True,null=True)
-    semister = models.ForeignKey(Semester,on_delete=models.PROTECT,blank=True,null=True)
+    student = models.ForeignKey(Student,on_delete=models.PROTECT,blank=False,null=True)
+    course = models.ForeignKey(Courses,on_delete=models.PROTECT,blank=False,null=True)
+    semister = models.ForeignKey(Semester,on_delete=models.PROTECT,blank=False,null=True)
     def __str__(self):
         return f"{self.student} {self.semister}"
