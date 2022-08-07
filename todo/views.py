@@ -5,7 +5,8 @@ import json
 from .models import *
 from .serializers import *
 # Create your views here.
-
+'''this script is used to create the views for the todo app'''
+'''a view is a class that handles the request and response'''
 class CurriculumView(viewsets.ModelViewSet):
     serializer_class = CurriculumSerializer
     queryset = Curriculum.objects.all()

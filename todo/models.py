@@ -3,6 +3,8 @@ from rest_framework.fields import DateField
 import email
 import django
 import datetime
+'''This script is used to create the models for the todo app'''
+'''A model is a class that represents a database table'''
 
 now = datetime.datetime.now()
 YEAR_CHOICES = []
@@ -67,5 +69,42 @@ class Registration(models.Model):
     student = models.ForeignKey(Student,on_delete=models.PROTECT,blank=False,null=True)
     course = models.ForeignKey(Courses,on_delete=models.PROTECT,blank=False,null=True)
     semister = models.ForeignKey(Semester,on_delete=models.PROTECT,blank=False,null=True)
+    idd = models.IntegerField(blank=True,null=True)
     def __str__(self):
         return f"{self.student} {self.semister}"
+
+# print()
+# # query for all apointments
+# for i in Apointment.objects.all():
+#     print(i)
+
+# print()
+# print()
+
+# a query for all students who have a year greater than 2015
+# for i in Student.objects.filter(year__gt=2015):
+#     print(i)
+
+# print()
+
+#a query to find the amount of courses that has 3 credits
+# print(len(Courses.objects.filter(credits=3)))
+
+# a query to find a semister that ends with the letter 'l'
+# for i in Semester.objects.filter(term__endswith='l'):
+#     print(i)
+
+# print()
+# # write a query to find the advisor who's name starts with 'a'
+
+# for i in Advisor.objects.filter(name__startswith='a'):
+#     print(i)
+
+# print()
+
+# print()
+# # a query to find all registrations
+# for i in Registration.objects.all():
+#     print(i)
+
+# print()

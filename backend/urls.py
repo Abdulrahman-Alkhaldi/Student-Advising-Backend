@@ -26,6 +26,7 @@ router.register(r'Apointment', views.ApointmentView)
 router.register(r'Courses', views.CoursesView)
 router.register(r'Student', views.StudentView)
 router.register(r'Semester', views.SemesterView)
+router.register(r'Registration', views.RegistrationView)
 
 
 

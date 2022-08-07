@@ -3,7 +3,8 @@ from .admin import *
 
 from .models import *
 
-
+'''this script is used to create the serializers for the todo app'''
+'''a serializer is a class that converts the model into a json object'''
 class CurriculumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curriculum
@@ -35,6 +36,6 @@ class SemesterSerializer(serializers.ModelSerializer):
         fields = ('term','year','startdate','enddate')
     
 class RegistrationSerializer(serializers.ModelSerializer):
-    class meta:
+    class Meta:
         model = Registration
-        fields = ('student','course','semister')
+        fields = ('student','course','semister','idd')
