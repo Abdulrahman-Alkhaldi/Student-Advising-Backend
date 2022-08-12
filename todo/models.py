@@ -3,8 +3,8 @@ from rest_framework.fields import DateField
 import email
 import django
 import datetime
-'''This script is used to create the models for the todo app'''
-'''A model is a class that represents a database table'''
+# this script is used to create the models for the database
+# A model is a class that represents a database table
 
 now = datetime.datetime.now()
 YEAR_CHOICES = []
@@ -73,10 +73,10 @@ class Registration(models.Model):
     def __str__(self):
         return f"{self.student} {self.semister}"
 
-# print()
-# # query for all apointments
-# for i in Apointment.objects.all():
-#     print(i)
+print()
+# query for all apointments
+for i in Apointment.objects.all():
+    print(i)
 
 # print()
 # print()
@@ -108,3 +108,10 @@ class Registration(models.Model):
 #     print(i)
 
 # print()
+
+
+##########################
+# add row to currriculum table
+# c = Curriculum(idd=1, year=2020)
+# c.save()
+# print(c)

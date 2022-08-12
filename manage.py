@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+''' This script is used to run the django project on the local machine. '''
 
 def main():
     """Run administrative tasks."""

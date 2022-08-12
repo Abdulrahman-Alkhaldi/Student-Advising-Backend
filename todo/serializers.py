@@ -2,9 +2,8 @@ from rest_framework import serializers
 from .admin import *
 
 from .models import *
-
-'''this script is used to create the serializers for the todo app'''
-'''a serializer is a class that converts the model into a json object'''
+# serializers.py is a python file that contains the serializers for the models
+# a serializer is a class that converts the model into a json object
 class CurriculumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curriculum
